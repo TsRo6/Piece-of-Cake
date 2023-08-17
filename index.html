@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piece of Cake</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;,">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    
+</head>
+<body>
+    <nav id="navbar-scrollspy" class="navbar navbar-expand-md sticky-top bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand flex-grow-0" href="#">
+                <img src="assets/imagini/logo piece of cake.png" alt="Logo" class="brand-logo coin">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse nav-items-position" id="navbarNavDropdown">
+                <ul class="navbar-nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspy1">Specialitati</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspy2">Despre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspy3">Galerie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspy4">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown nav-cart mt-o">
+                        <a href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">                        
+                            <i class="bi bi-cart shopping-cart-icon"></i>
+                        </a>
+                        <ul id="cart-items" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <p id="cart-total">Total coș: 0 lei</p>
+                            <div id="cart-controls-submit">
+                                <ul id="cart-items-submit" class="list-group"></ul>
+                                <button id="submitOrderBtn" class="btn btn-primary mt-1" style="display: none;">Trimite comanda</button>
+                            </div> 
+                            <div id="cart-warning" class="cart-warning">
+                                Comanda minimă este de 100 lei.
+                            </div> 
+                        </ul>
+                        <div id="cart-notification" class="cart-notification">0</div>
+                    </li>                  
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <div data-bs-spy="scroll" data-bs-target="#navbar-scrollspy" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
+        <div class="video-container">
+            <video id="myVideo" class="video-container" width="100%" height="auto" loop autoplay>
+                <source src="assets/video/story_video.mp4" type="video/mp4">
+            </video>
+            <div>
+                <button id="muteBtn">Mute Video</button>
+                <button id="unmuteBtn" style="display: none;">Unmute Video</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalOverlay" class="modal-overlay hidden"></div>
+    <div id="scrollspy1" class="container-scrollspy1">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-2">
+            <!-- Cookies section -->
+            <div class="col">
+                <div class="card">
+                    <img src="" class="card-img-top" alt="">
+                    <div class="card-body d-flex d-flex flex-column align-items-center">
+                        <h5 class="card-title" id="cookies-title">Cookies</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="#" class="btn btn-primary cookies-menu">Cookies</a>
+                        <!-- Cele 3 elemente pentru Cookies -->
+                        <div class="cookies-section hidden">
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="cookies-mix-checkbox" id="cookies-ciocolataMix">
+                                <label for="cookies-ciocolataMix" class="check">Ciocolata alba</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0"">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="cookies-neagra-checkbox" id="cookies-ciocolataNeagra">
+                                <label for="cookies-ciocolataNeagra">Ciocolata neagra</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0"">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="cookies-mix-checkbox" id="cookies-mixCiocolata">
+                                <label for="cookies-mixCiocolata">Mix de ciocolata</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <button class="add-to-cart-btn">Adaugă în coș</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cupcakes section -->
+            <div class="col">
+                <div class="card">
+                    <img src="" class="card-img-top" alt="">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <h5 class="card-title" id="cupcakes-title">Cupcakes</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="#" class="btn btn-primary cupcakes-menu">Cupcakes</a>
+                        <!-- Cele 2 elemente pentru Cupcakes -->
+                        <div class="cupcakes-section hidden">
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="cupcakes-alba-checkbox" id="cupcakes-ciocolataAlbaMerisoare">
+                                <label for="cupcakes-ciocolataAlbaMerisoare">Ciocolata alba si merisoare</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="cupcakes-cacao-checkbox" id="cupcakes-ciocolataCuCacao">
+                                <label for="cupcakes-ciocolataCuCacao">Ciocolata cu cacao</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <button class="add-to-cart-btn">Adaugă în coș</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        
+            <!-- Choux au craquelin section -->
+            <div class="col">
+                <div class="card">
+                    <img src="" class="card-img-top" alt="">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <h5 class="card-title" id="choux-title">Choux au craquelin</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="#" class="btn btn-primary choux-menu">Choux</a>
+                        <!-- Cele 8 elemente pentru Choux au craquelin -->
+                        <div class="choux-section hidden">
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="choux-alba-checkbox" id="choux-alba-checkbox">
+                                <label for="choux-alba-checkbox">Ciocolata alba</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="choux-neagra-checkbox" id="choux-neagra-checkbox">
+                                <label for="choux-neagra-checkbox">Ciocolata neagra</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="choux-nutella-checkbox" id="choux-nutella-checkbox">
+                                <label for="choux-nutella-checkbox">Nutela</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="choux-cafea-checkbox" id="choux-cafea-checkbox">
+                                <label for="choux-cafea-checkbox">Cafea</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="choux-fructe-checkbox" id="choux-fructe-checkbox">
+                                <label for="choux-fructe-checkbox">Fructe</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="choux-cocos-checkbox" id="choux-cocos-checkbox">
+                                <label for="choux-cocos-checkbox">Cocos</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="choux-lamaie-checkbox" id="choux-lamaie-checkbox">
+                                <label for="choux-lamaie-checkbox">Lamaie</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="choux-fistic-checkbox" id="choux-fistic-checkbox">
+                                <label for="choux-fistic-checkbox">Fistic</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <button class="add-to-cart-btn">Adaugă în coș</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cakes section -->
+            <div class="col">
+                <div class="card">
+                    <img src="" class="card-img-top" alt="">
+                    <div class="card-body d-flex d-flex flex-column align-items-center">
+                        <h5 class="card-title" id="cakes-title">Cakes</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="#" class="btn btn-primary cakes-menu">Cakes</a>
+                        <!-- Cele 8 elemente pentru Cakes -->
+                        <div class="cakes-section hidden">
+                            <h5>Combinatie de 2 arome:</h5>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="cakes-cafea-checkbox" id="cakes-cafea-checkbox">
+                                <label for="cakes-cafea-checkbox">Cafea</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="cakes-ciocolata-checkbox" id="cakes-ciocolata-checkbox">
+                                <label for="cakes-ciocolata-checkbox">Ciocolata</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="cakes-alba-checkbox" id="cakes-alba-checkbox">
+                                <label for="cakes-alba-checkbox">Ciocolata alba</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="cakes-nutella-checkbox" id="cakes-nutella-checkbox">
+                                <label for="cakes-nutella-checkbox">Nutela</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="cakes-fistic-checkbox" id="cakes-fistic-checkbox">
+                                <label for="cakes-fistic-checkbox">Fistic</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="cakes-fructe-checkbox" id="cakes-fructe-checkbox">
+                                <label for="cakes-fructe-checkbox">Fructe</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="cakes-cocos-checkbox" id="cakes-cocos-checkbox">
+                                <label for="cakes-cocos-checkbox">Cocos</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="cakes-lamaie-checkbox" id="cakes-lamaie-checkbox">
+                                <label for="cakes-lamaie-checkbox">Lamaie</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <button class="add-to-cart-btn">Adaugă în coș</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jar cake section -->
+            <div class="col">
+                <div class="card">
+                    <img src="" class="card-img-top" alt="">
+                    <div class="card-body d-flex d-flex flex-column align-items-center">
+                        <h5 class="card-title" id="jar-cake-title">Jar cake</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="#" class="btn btn-primary jar-menu">Jar cake</a>
+                        <!-- Cele 8 elemente pentru Jar cake -->
+                        <div class="jar-cake-section hidden">
+                            <h5>Combinatie de 2 arome:</h5>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="jar-cafea-checkbox" id="jar-cafea-checkbox">
+                                <label for="jar-cafea-checkbox">Cafea</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="jar-ciocolata-checkbox" id="jar-ciocolata-checkbox">
+                                <label for="jar-ciocolata-checkbox">Ciocolata</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="jar-alba-checkbox" id="jar-alba-checkbox">
+                                <label for="jar-alba-checkbox">Ciocolata alba</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="jar-nutella-checkbox" id="jar-nutella-checkbox">
+                                <label for="jar-nutella-checkbox">Nutela</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="jar-fistic-checkbox" id="jar-fistic-checkbox">
+                                <label for="jar-fistic-checkbox">Fistic</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="jar-fructe-checkbox" id="jar-fructe-checkbox">
+                                <label for="jar-fructe-checkbox">Fructe</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="jar-cocos-checkbox" id="jar-cocos-checkbox">
+                                <label for="jar-cocos-checkbox">Cocos</label>                               
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="jar-lamaie-checkbox" id="jar-lamaie-checkbox">
+                                <label for="jar-lamaie-checkbox">Lamaie</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <button class="add-to-cart-btn">Adaugă în coș</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Muffins section -->
+            <div class="col">
+                <div class="card">
+                    <img src="" class="card-img-top" alt="">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <h5 class="card-title" id="muffins-title">Muffins</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="#" class="btn btn-primary muffins-menu">Muffins</a>
+                        <!-- Cele 3 elemente pentru Muffins -->
+                        <div class="muffins-section hidden">
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="muffins-afine-checkbox" id="muffins-afine-checkbox">
+                                <label for="muffins-afine-checkbox">Afine</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="muffins-alba-checkbox" id="muffins-alba-checkbox">
+                                <label for="muffins-alba-checkbox">Ciocolata alba</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <div class="input-container">
+                                <button class="decrement">-</button>
+                                <input type="number" class="quantity" value="1" min="0">
+                                <button class="increment">+</button>
+                                <input type="checkbox" class="muffins-neagra-checkbox" id="muffins-neagra-checkbox">
+                                <label for="muffins-neagra-checkbox">Ciocolata neagra</label>
+                                <span class="price" data-price="10">10 lei</span>
+                            </div>
+                            <button class="add-to-cart-btn">Adaugă în coș</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-form">
+    <button class="close-modal-btn" id="closeModalBtn">&times;</button>
+    <div class="location-form">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="location" id="pickup" value="pickup" required>
+            <label class="form-check-label" for="pickup">Ridicare personală</label>
+        </div>
+        <div class="pickup-location" style="display: none;">
+            <label for="pickup-location">Adresa pentru ridicare</label>
+            <span>Adresă prestabilită pentru ridicare personală</span>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="location" id="delivery" value="delivery" required>
+            <label class="form-check-label" for="delivery">Livrare la domiciliu</label>
+        </div>
+        <div class="delivery-address">
+            <label for="delivery-address">Adresă de livrare</label>
+            <input type="text" name="delivery-address" id="delivery-address" placeholder="Stradă, nr., bl., ap. et.">
+            <div class="location-dropdowns">
+                <select id="county-dropdown" required>
+                    <option value="" disabled selected>Alege județul</option>
+                    <option value="București">București</option>
+                    <option value="Ilfov">Ilfov</option>
+                </select>
+                <select id="locality-dropdown" required disabled>
+                    <option value="" disabled selected>Alege localitatea</option>
+                </select>
+            </div>
+            <div class="delivery-price">
+                Preț transport: <span id="delivery-price">0.00 lei</span>
+            </div>
+        </div>
+        <div class="pickup-location" style="display: none;">
+            <label for="pickup-location">Adresa pentru ridicare</label>
+            <span>Adresă prestabilită pentru ridicare personală</span>
+        </div>
+        <label for="completion-date">Când vrei să fie gata comanda ta?</label>
+        <input type="date" name="completion-date" id="completion-date" min="${getTomorrowDate()}" required>   
+        <form id="fs-frm" name="command-form" accept-charset="utf-8" action="https://formspree.io/f/xknljekd" method="post">
+            <fieldset id="fs-frm-inputs">
+                <label for="full-name">Nume</label>
+                <input type="text" name="name" id="full-name" placeholder="Nume" required="">
+                <label for="email-address">Email</label>
+                <input type="email" name="_replyto" id="email-address" placeholder="email@yahoo.com" required="">
+                <label for="telephone">Telefon</label>
+                <input type="tel" name="telephone" id="telephone" placeholder="(+40) 123 123 123" required="">
+                <label for="command">Produse Comanda</label>
+                <textarea rows="6" name="command" id="command" readonly></textarea>
+                <input type="hidden" name="_subject" id="email-subject" value="Command Form Submission">
+            </fieldset>
+        <input type="submit" value="Trimite Comanda">
+        </form>
+    </div>
+</div>
+
+
+    <div id="scrollspy2">3</div>
+    <div id="scrollspy3">4</div>
+    <div id="scrollspy4">5</div>
+    
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>
