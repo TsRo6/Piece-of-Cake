@@ -642,16 +642,10 @@ a.btn.btn-primary:hover {
   font-family: "Poppins", sans-serif;
 }
 
-.fa-brands {
-  font-size: 25px;
-  color: var(--color-black);
-  padding: 10px 4px;
-  width: 40px;
-  margin-left: 8px;
-}
+.fa-brands,
 .fa-phone {
   font-size: 25px;
-  color: var(--color-black);
+  color: white;
   padding: 10px 4px;
   width: 40px;
   margin-left: 8px;
@@ -662,9 +656,9 @@ a.btn.btn-primary:hover {
 }
 
 .fl-fl a {
-  color: var(--color-black) !important;
+  color: black !important;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 800;
   text-align: center;
   line-height: 43px !important;
   vertical-align: top !important;
