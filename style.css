@@ -108,9 +108,9 @@ nav.stroke .line-under:hover:after {
 
 #cart-items.dropdown-menu.show {
   position: absolute;
-  transform: translateX(-50%);
+  transform: translateX(-80%);
   top: calc(85% + 10px);
-  width: 30vw;
+  width: 57vw;
   padding: 10px;
 }
 
@@ -871,8 +871,8 @@ a.btn.btn-primary:hover {
   #cart-items.dropdown-menu.show {
     display: block;
     position: absolute;
-    transform: translateX(-41%);
-    top: calc(90% + 10px);
+    transform: translateX(-51%);
+    top: calc(90% + 25px);
     width: 100vw;
   }
 }

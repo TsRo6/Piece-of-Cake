@@ -16,11 +16,11 @@
 </head>
 <body class="p-0 m-0">
     <nav id="navbar-scrollspy" class="navbar navbar-expand-md fixed-top stroke">
-        <div class="container">
+        <div class="container d-flex justify-content-center">
             <a class="navbar-brand flex-grow-0" href="#">
                 <img src="assets/imagini/logo piece of cake.png" alt="Logo" class="brand-logo coin">
             </a>
-            <button class="navbar-toggler me-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler ms-5 me-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse nav-items-position" id="navbarNavDropdown">
@@ -58,24 +58,24 @@
                             <a class="dropdown-item" href="#" target="_blank">Piece_of_Cake</a>
                           </li>
                         </ul>
-                    </li>
-                    <li class="nav-item dropdown nav-cart mt-o">
-                        <a href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">                        
-                            <i class="bi bi-cart shopping-cart-icon"></i>
-                        </a>
-                        <ul id="cart-items" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <p id="cart-total">Total coș: 0 lei</p>
-                            <div id="cart-controls-submit">
-                                <ul id="cart-items-submit" class="list-group"></ul>
-                                <button id="submitOrderBtn" class="btn btn-primary mt-1" style="display: none;">Trimite comanda</button>
-                            </div> 
-                            <div id="cart-warning" class="cart-warning">
-                                Comanda minimă este de 100 lei.
-                            </div> 
-                        </ul>
-                        <div id="cart-notification" class="cart-notification">0</div>
-                    </li>                  
+                    </li>              
                 </ul>
+            </div>
+            <div class="nav-item dropdown nav-cart mt-o me-2 ms-3">
+                <a href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">                        
+                    <i class="bi bi-cart shopping-cart-icon"></i>
+                </a>
+                <ul id="cart-items" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <p id="cart-total">Total coș: 0 lei</p>
+                    <div id="cart-controls-submit">
+                        <ul id="cart-items-submit" class="list-group"></ul>
+                        <button id="submitOrderBtn" class="btn btn-primary mt-1" style="display: none;">Trimite comanda</button>
+                    </div> 
+                    <div id="cart-warning" class="cart-warning">
+                        Comanda minimă este de 100 lei.
+                    </div> 
+                </ul>
+                <div id="cart-notification" class="cart-notification">0</div>
             </div>
         </div>
     </nav>
