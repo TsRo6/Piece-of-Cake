@@ -44,57 +44,51 @@ function toggleMenuSection(menuButton, menuSection) {
     let currentOpenSection = null;
   
   // Audio
-    const audio = document.getElementById("mySong");
-    const playBtn = document.getElementById("playBtn");
-    const stopBtn = document.getElementById("stopBtn");
-    const playText = document.getElementById("play-text");
-    const stopText = document.getElementById("stop-text");
-  
-    // Butonul de oprire
-    stopBtn.addEventListener("click", function () {
-      audio.pause(); // Opreșteți audio
-      playBtn.style.display = "inline-block";
-      playText.style.display = "inline-block";
-      stopBtn.style.display = "none";
-      stopText.style.display = "none";
-    });
-  
-    // Butonul de redare
-    playBtn.addEventListener("click", function () {
-      audio.play(); // Porniți audio
-      playBtn.style.display = "none";
-      playText.style.display = "none";
-      stopBtn.style.display = "inline-block";
-      stopText.style.display = "inline-block";
-    });
-  
-    // Textul de redare
-    playText.addEventListener("click", function () {
-      audio.play();
-      playBtn.style.display = "none";
-      playText.style.display = "none";
-      stopBtn.style.display = "inline-block";
-      stopText.style.display = "inline-block";
-    });
-  
-    // Textul de oprire
-    stopText.addEventListener("click", function () {
-      audio.pause(); // Opreșteți audio
-      playBtn.style.display = "inline-block";
-      playText.style.display = "inline-block";
-      stopBtn.style.display = "none";
-      stopText.style.display = "none";
-    });
-  
-    playBtn.style.display = "none";
-    playText.style.display = "none";
-  
-    // Evenimentul "ended" al audio
-    audio.addEventListener("ended", function () {
+  const audio = document.getElementById("mySong");
+  const playBtn = document.getElementById("playBtn");
+  const stopBtn = document.getElementById("stopBtn");
+  const playText = document.getElementById("play-text");
+  const stopText = document.getElementById("stop-text");
+
+  // Funcția pentru gestionarea evenimentului de clic sau atingere
+  function toggleAudio() {
+      if (audio.paused) {
+          audio.play();
+          playBtn.style.display = "none";
+          playText.style.display = "none";
+          stopBtn.style.display = "inline-block";
+          stopText.style.display = "inline-block";
+      } else {
+          audio.pause();
+          playBtn.style.display = "inline-block";
+          playText.style.display = "inline-block";
+          stopBtn.style.display = "none";
+          stopText.style.display = "none";
+      }
+  }
+
+  // Adăugați evenimentul de clic
+  playBtn.addEventListener("click", toggleAudio);
+  stopBtn.addEventListener("click", toggleAudio);
+
+  // Adăugați evenimentul de atingere
+  playBtn.addEventListener("touchstart", toggleAudio);
+  stopBtn.addEventListener("touchstart", toggleAudio);
+
+  // Textul de redare și oprire
+  playText.addEventListener("click", toggleAudio);
+  stopText.addEventListener("click", toggleAudio);
+
+  playBtn.style.display = "none";
+  playText.style.display = "none";
+
+  // Evenimentul "ended" al audio
+  audio.addEventListener("ended", function () {
       // Loop song
       audio.currentTime = 0;
       audio.play();
-    });
+  });
+  
   
     // Inchiderea secțiunii curente și resetarea checkboxurilor
     function closeCurrentSection() {
