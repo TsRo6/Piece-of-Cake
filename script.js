@@ -49,46 +49,44 @@ function toggleMenuSection(menuButton, menuSection) {
   const stopBtn = document.getElementById("stopBtn");
   const playText = document.getElementById("play-text");
   const stopText = document.getElementById("stop-text");
-
-  // Funcția pentru gestionarea evenimentului de clic sau atingere
+  
+  // Funcție pentru a gestiona redarea audio
   function toggleAudio() {
-      if (audio.paused) {
-          audio.play();
-          playBtn.style.display = "none";
-          playText.style.display = "none";
-          stopBtn.style.display = "inline-block";
-          stopText.style.display = "inline-block";
-      } else {
-          audio.pause();
-          playBtn.style.display = "inline-block";
-          playText.style.display = "inline-block";
-          stopBtn.style.display = "none";
-          stopText.style.display = "none";
-      }
+    if (audio.paused) {
+      audio.play(); // Porniți audio
+      playBtn.style.display = "none";
+      playText.style.display = "none";
+      stopBtn.style.display = "inline-block";
+      stopText.style.display = "inline-block";
+    } else {
+      audio.pause(); // Opreșteți audio
+      playBtn.style.display = "inline-block";
+      playText.style.display = "inline-block";
+      stopBtn.style.display = "none";
+      stopText.style.display = "none";
+    }
   }
-
-  // Adăugați evenimentul de clic
+  
+  // Butonul de oprire și redare pentru ecrane tactile
   playBtn.addEventListener("click", toggleAudio);
   stopBtn.addEventListener("click", toggleAudio);
-
-  // Adăugați evenimentul de atingere
+  playText.addEventListener("click", toggleAudio);
+  
+  // Evenimentul "ended" al audio
+  audio.addEventListener("ended", function () {
+    // Loop song
+    audio.currentTime = 0;
+    audio.play();
+  });
+  
+  // Eveniment pentru dispozitivele tactile
   playBtn.addEventListener("touchstart", toggleAudio);
   stopBtn.addEventListener("touchstart", toggleAudio);
-
-  // Textul de redare și oprire
-  playText.addEventListener("click", toggleAudio);
-  stopText.addEventListener("click", toggleAudio);
-
+  playText.addEventListener("touchstart", toggleAudio);
+  
   playBtn.style.display = "none";
   playText.style.display = "none";
 
-  // Evenimentul "ended" al audio
-  audio.addEventListener("ended", function () {
-      // Loop song
-      audio.currentTime = 0;
-      audio.play();
-  });
-  
   
     // Inchiderea secțiunii curente și resetarea checkboxurilor
     function closeCurrentSection() {
