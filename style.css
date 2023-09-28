@@ -21,7 +21,7 @@
   width: 100px;
   height: 80px;
   position: absolute;
-  top: 30px;
+  top: 40px;
   left: 100px;
   z-index: 1;
   transform: translate(50%, 50%) rotateY(0.142rad);
@@ -85,8 +85,17 @@ nav.stroke .line-under:after {
   background: var(--bg-pink);
   height: 2px;
 }
+
 nav.stroke .line-under:hover:after {
   width: 100%;
+}
+
+#toggler-style {
+  color: var(--bg-pink);
+}
+
+#toggler-style:focus {
+  box-shadow: 0 0 0 0.10rem;
 }
 
 #dropdown-menu {
@@ -306,7 +315,7 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 10px 20%;
   padding: 5px;
   border-radius: 10px;
-  border: solid 3px var(--bg-pink);
+  border: solid 2px var(--bg-pink);
   background-color: var(--green-primary);
   color: #000;
   font-weight: bold;
@@ -337,7 +346,7 @@ input[type="number"]::-webkit-outer-spin-button {
 #fs-frm [type="submit"]:hover {
   background-color: var(--bg-pink);
   color: #fff;
-  border: solid 3px var(--green-primary);
+  border: solid 2px var(--green-primary);
 }
 
 .increment-button,

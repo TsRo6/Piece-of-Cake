@@ -20,7 +20,7 @@
             <a class="navbar-brand flex-grow-0" href="#">
                 <img src="assets/imagini/logo piece of cake.png" alt="Logo" class="brand-logo coin">
             </a>
-            <button class="navbar-toggler ms-5 me-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler ms-5 me-1" id="toggler-style" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse nav-items-position" id="navbarNavDropdown">
@@ -153,7 +153,7 @@
                                 </ul>
                             </div>
                             <div class="detalii-achizitie">
-                                <p class="ms-3"><strong>Detalii achiziție produs:</strong> acest produs se vinde la Kg, cantitate minimă 2 kg.</p>
+                                <p class="ms-3"><strong>Detalii achiziție produs:</strong> acest produs se vinde la Kg, cantitate minimă 2 kg., cantitate maximă 4 kg.</p>
                             </div>
                         </div>
                         <a href="#" class="btn btn-primary cakes-menu">Cakes</a>
@@ -227,7 +227,9 @@
                                 </div>
                                 <p class="cake-text"></p>
                             </div>
-                            <button class="add-to-cart-button">Adaugă în coș</button>
+                            <div class="d-flex justify-content-center">
+                                <button class="add-to-cart-button">Adaugă în coș</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -254,13 +256,13 @@
                                 </ul>
                             </div>
                             <div class="detalii-achizitie">
-                                <p class="ms-3"><strong>Detalii achiziție produs:</strong> acest produs se vinde la bucată, aproximativ 200g / buc. </p>
+                                <p class="ms-3"><strong>Detalii achiziție produs:</strong> acest produs se vinde la bucată, 1 buc. = aprox. 200g.<p>
                             </div>
                         </div>
                         <a href="#" class="btn btn-primary jar-menu">Jar cake</a>
                         <!-- Cele 11 elemente pentru Jar cake -->
                         <div class="jar-cake-section hidden">
-                            <h5>Una sau combinație de 2 arome:</h5>
+                            <h5 class="d-flex justify-content-center">Una sau combinație de 2 arome:</h5>
                             <div class="input-container">
                                 <button class="decrement">-</button>
                                 <input type="number" class="quantity" value="1" min="0">
@@ -393,7 +395,7 @@
                                 </ul>
                             </div>
                             <div class="detalii-achizitie">
-                                <p class="ms-3"><strong>Detalii achiziție produs:</strong> acest produs se vinde la porție, 1 porție aprox. 700-800g = 20 buc.</p>
+                                <p class="ms-3"><strong>Detalii achiziție produs:</strong> acest produs se vinde la porție, 1 porție = 20 buc. (aprox. 700-800g)</p>
                             </div>
                         </div>
                         <a href="#" class="btn btn-primary cookies-menu">Cookies</a>
@@ -445,7 +447,7 @@
                                 </ul>
                             </div>
                             <div class="detalii-achizitie">
-                                <p class="ms-3"><strong>Detalii achiziție produs:</strong> acest produs se vinde la porție, 1 porție aproximativ 900-1000g = 15 buc.</p>
+                                <p class="ms-3"><strong>Detalii achiziție produs:</strong> acest produs se vinde la porție, 1 porție = 15 buc. (aprox. 900-1000g)</p>
                             </div>
                         </div>
                         <a href="#" class="btn btn-primary cupcakes-menu">Brownies</a>
@@ -494,7 +496,7 @@
                                 </ul>
                             </div>
                             <div class="detalii-achizitie">
-                                <p class="ms-3"><strong>Detalii achiziție produs:</strong> acest produs se vinde la porție, 1 porție aproximativ 900-1000g = 10buc.</p>
+                                <p class="ms-3"><strong>Detalii achiziție produs:</strong> acest produs se vinde la porție, 1 porție = 10buc. (aprox. 900-1000g)</p>
                             </div>
                         </div>
                         <a href="#" class="btn btn-primary choux-menu">Choux</a>
@@ -591,7 +593,7 @@
                                 </ul>
                             </div>
                             <div class="detalii-achizitie">
-                                <p class="ms-3"><strong>Detalii achiziție produs:</strong>acest produs se vinde la porție, 1 porție aproximativ 900-1000g = 15 buc.</p>
+                                <p class="ms-3"><strong>Detalii achiziție produs:</strong> acest produs se vinde la porție, 1 porție = 15 buc. (aprox. 900-1000g)</p>
                             </div>
                         </div>
                         <a href="#" class="btn btn-primary muffins-menu">Muffins</a>
